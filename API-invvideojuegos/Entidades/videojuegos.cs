@@ -1,5 +1,6 @@
 ﻿using API_invvideojuegos.Entidades;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace API_invvideojuegos.Entidades
 {
@@ -19,9 +20,15 @@ namespace API_invvideojuegos.Entidades
         [Required(ErrorMessage = "rellenar este apartado")]
         public int precio { get; set; }
         [Required(ErrorMessage = "rellenar este apartado")]
-        public int genero { get; set; }
+        public string genero { get; set; }
         [Required(ErrorMessage = "rellenar este apartado")]
         public int clasificacion { get; set; }
+        
+        [NotMapped]
+        public int Menor { get; set; }
+
+        [NotMapped]
+        public int Mayor { get; set; }
     }
 
 }
